@@ -6,13 +6,19 @@ import datetime as dt
 
 if __name__ == "__main__":
     ipf = str(input("入力ファイルのPATHを入力してください。\n>>"))
-    #ipf = "./sample-input.csv"
+    # ipf = "./sample-input.csv"
 
     num = int(input("あたりの個数を入力してください。\n>>"))
-    #num = 5
+    # num = 5
 
-    dup = bool(input("重複当選の有無を入力してください。(True/False)\n>>"))
-    #dup = False
+    dic = {'y': True, 'yes': True, 'n': False, 'no': False}
+    while True:
+        inp = input('重複当選の有無を入力してください。[Y]es/[N]o? \n>> ').lower()
+        if inp in dic:
+            dup = dic[inp]
+            break
+        print('Error! Input again.')
+    # dup = False
 
     with open("./choice.log", mode="a", encoding="utf-8_sig") as log:
         now = dt.datetime.now()
