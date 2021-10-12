@@ -6,6 +6,7 @@ import datetime as dt
 
 if __name__ == "__main__":
     ipf = str(input("入力ファイルのPATHを入力してください。\n>>"))
+<<<<<<< HEAD
     #ipf = "./sample-input.csv"
 
     num = int(input("あたりの個数を入力してください。\n>>"))
@@ -17,6 +18,18 @@ if __name__ == "__main__":
         dup = input('[Y]es/[N]o? >> ').lower()
         if dup in dic:
             dup = dic[dup]
+=======
+    # ipf = "./sample-input.csv"
+
+    num = int(input("あたりの個数を入力してください。\n>>"))
+    # num = 5
+
+    dic = {'y': True, 'yes': True, 'n': False, 'no': False}
+    while True:
+        inp = input('重複当選の有無を入力してください。[Y]es/[N]o? \n>> ').lower()
+        if inp in dic:
+            dup = dic[inp]
+>>>>>>> relase
             break
         print('Error! Input again.')
     # dup = False
@@ -33,7 +46,11 @@ if __name__ == "__main__":
         ipf["result"] = ""
         if dup:
             for chance in range(num):
+<<<<<<< HEAD
                 choice = rd.choices(dice, weights=weight)[0]
+=======
+                choice = rd.choices(dice, weights=weight)[000]
+>>>>>>> relase
                 ipf.loc[choice,
                         "result"] += list(string.ascii_lowercase)[chance]
                 print(">>", ipf.loc[choice, "choice"], "さんが当選しました。")
